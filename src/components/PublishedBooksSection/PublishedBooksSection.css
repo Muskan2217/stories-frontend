@@ -1,0 +1,237 @@
+.books-section {
+  padding: 80px;
+  background-color: #faf9f6;
+}
+
+/* HEADER */
+.books-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.books-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.books-badge {
+  display: inline-block;
+  background-color: #edeae3;
+  color: #1a3d2b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  width: fit-content;
+  z-index:9;
+}
+
+.books-title {
+  max-width: 600px;
+}
+
+.books-view-btn {
+  display: inline-block;
+  border: 1.5px solid #1a3d2b;
+  color: #1a3d2b;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.books-view-btn:hover {
+  background-color: #1a3d2b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* GRID */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+/* IMAGE WRAP */
+.book-card-img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  
+}
+
+
+
+
+.book-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-card-img {
+  transform: scale(1.05);
+}
+
+
+
+/* BOOK NUMBER BADGE */
+.book-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #fff;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  z-index: 3;
+  /* backdrop-filter: blur(4px); */
+}
+
+/* OVERLAY */
+
+/* Common overlay */
+.book-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+/* ========================= */
+/* GREEN (1st, 3rd, 5th...) */
+/* ========================= */
+.book-card:nth-child(odd) .book-card-overlay {
+  background:
+    /* linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ), */
+    linear-gradient(
+      to top,
+      rgba(1, 77, 58, 0.574) 30%,
+      /* rgba(2, 185, 139, 0.262) 30%,
+      rgba(4, 165, 120, 0.419) 60%,
+      rgba(18, 255, 192, 0.232) 80%, */
+      rgba(1, 95, 70, 0.541) 70%
+    );
+}
+
+/* ========================= */
+/* ORANGE (2nd, 4th, 6th...) */
+/* ========================= */
+.book-card:nth-child(even) .book-card-overlay {
+  background:
+    /* linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ), */
+    linear-gradient(
+      to top,
+      rgba(139, 84, 2, 0.537) 50%,
+      /* rgba(212, 113, 1, 0.373) 20%,
+      rgba(59, 44, 0, 0.442) 20%,
+      rgba(199, 87, 7, 0.638) 20%, */
+      rgba(180, 145, 8, 0.455) 50%
+    );
+}
+.book-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.book-card-author {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+/* LINKS */
+.book-card-links {
+  display: flex;
+  gap: 8px;
+}
+
+.book-link {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #e0ddd6;
+  color: #1a3d2b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.book-link:hover {
+  background: #1a3d2b;
+  color: #fff;
+  border-color: #1a3d2b;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .books-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .books-section {
+    padding: 40px 20px;
+  }
+
+  .books-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .books-title {
+    font-size: 32px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}

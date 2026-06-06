@@ -1,0 +1,53 @@
+:root {
+  /* Colors */
+  --color-primary:#2f6054;
+  --color-primary-hover: #1e4038;
+  --color-secondary: #d39b17;
+  --color-body-bg: #faf9f4d9;
+  --color-white: #faf9f4;
+  --color-white-muted: #faf9f4cc;
+  --color-text: #333333cc;
+
+  /* Fonts */
+  --font-heading: 'Georgia', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --fs-hero: 72px;
+  --fs-para: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-body-bg);
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+
+.container {
+  max-width: 87vw;  
+  margin: 0 auto 30px;
+  /* padding: 0 0px; */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 20px; 
+  color:var(--color-primary);
+}
