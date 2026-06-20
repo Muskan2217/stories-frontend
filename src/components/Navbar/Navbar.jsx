@@ -59,7 +59,7 @@ const Navbar = () => {
           
         </ul>
 
-        <button className="join-btn">Join Contest</button>
+        <button className="join-btn">Login / Sign Up</button>
 
          {/*  Hamburger icon */}
   <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

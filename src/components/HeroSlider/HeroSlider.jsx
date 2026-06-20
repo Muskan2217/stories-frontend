@@ -17,7 +17,7 @@ const HeroSlider = () => {
     if (sliders.length === 0) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % sliders.length);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [sliders]);
 
@@ -32,56 +32,64 @@ const HeroSlider = () => {
   return (
     <section className="hero">
       {/* Left Side */}
-      <div className="hero-left">
-        <span className="hero-badge">
-          ● INDIA'S LEADING YOUNG AUTHORS PLATFORM
-        </span>
-        <h1 className="hero-title">{slide.title}</h1>
-        <p className="hero-subtitle">{slide.subtitle}</p>
-        <div className="hero-btns">
-          <a
-            href={slide.primary_btn_url || slide.button_link || "#"}
-            className="btn-primary"
-          >
-            {slide.primary_btn_label || slide.button_text || "Explore"}
-          </a>
+     <div className="hero-left">
+  <div key={current} className="hero-content">
+    
+    <span className="hero-badge">
+      ● India’s 1st and only Literary Platform for Kids
+    </span>
 
-          {(slide.outline_btn_label || slide.outline_btn_url) && (
-            <a href={slide.outline_btn_url || "#"} className="btn-outline">
-              {slide.outline_btn_label || "Learn More"}
-            </a>
-          )}
-        </div>
+    <h1 className="hero-title">{slide.title}</h1>
+    <p className="hero-subtitle">{slide.subtitle}</p>
 
-        {/* Dots + Arrows */}
-        <div className="hero-nav">
-          <button className="arrow" onClick={prev}>
-            &#8592;
-          </button>
-          <div className="dots">
-            {sliders.map((_, i) => (
-              <span
-                key={i}
-                className={`dot ${i === current ? "active" : ""}`}
-                onClick={() => setCurrent(i)}
-              />
-            ))}
-          </div>
-          <button className="arrow" onClick={next}>
-            &#8594;
-          </button>
-        </div>
-      </div>
+    <div className="hero-btns">
+      <a
+        href={slide.primary_btn_url || slide.button_link || "#"}
+        className="btn-primary"
+      >
+        {slide.primary_btn_label || slide.button_text || "Explore"}
+      </a>
+
+      {(slide.outline_btn_label || slide.outline_btn_url) && (
+        <a href={slide.outline_btn_url || "#"} className="btn-outline">
+          {slide.outline_btn_label || "Learn More"}
+        </a>
+      )}
+    </div>
+
+  </div>
+
+  {/* NAV stays outside */}
+  <div className="hero-nav">
+    <button className="arrow" onClick={prev}>←</button>
+
+    <div className="dots">
+      {sliders.map((_, i) => (
+        <span
+          key={i}
+          className={`dot ${i === current ? "active" : ""}`}
+          onClick={() => setCurrent(i)}
+        />
+      ))}
+    </div>
+
+    <button className="arrow" onClick={next}>→</button>
+  </div>
+</div>
 
       {/* Right Side */}
-      <div className="hero-right">
-        <div className="hero-img-wrap">
-         <img
-  src={slide.image_url}
-  alt={slide.title}
-  className="hero-img"
-/>
-        </div>
+<div className="hero-right">
+  <div className="hero-img-layer">
+    {sliders.map((s, i) => (
+      <img
+        key={i}
+        src={s.image_url}
+        alt={s.title}
+        className={`hero-img ${i === current ? "active" : ""}`}
+      />
+    ))}
+  </div>
+
 
         {/* Static Badge */}
         <div className="hero-stat">
