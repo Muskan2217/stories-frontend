@@ -230,7 +230,8 @@
 @media (max-width: 1000px) {
   .hero {
     flex-direction: column;
-    padding:40px;
+    padding: 30px 20px 65px;
+    gap:30px;
     text-align: center;
   }
 
@@ -239,11 +240,12 @@
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .hero-btns {
     justify-content: center;
+      margin-bottom: 25px;
   }
 
   .hero-nav {
@@ -269,8 +271,8 @@
   }
 
   .hero-stat {
-    bottom: -30px;
-    left: -40px;
+    bottom: -40px;
+    left: -10px;
     padding: 7px;
 }
 
