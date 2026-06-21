@@ -6,6 +6,7 @@ import { API } from "../../config/api";
 const HeroSlider = () => {
   const [sliders, setSliders] = useState([]);
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     axios.get(API.heroSlider).then((res) => {
@@ -13,13 +14,17 @@ const HeroSlider = () => {
     });
   }, []);
 
+
+
   useEffect(() => {
-    if (sliders.length === 0) return;
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % sliders.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, [sliders]);
+  if (sliders.length === 0 || isPaused) return;
+
+  const timer = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % sliders.length);
+  }, 7000);
+
+  return () => clearInterval(timer);
+}, [sliders, isPaused]);
 
   const prev = () =>
     setCurrent((c) => (c - 1 + sliders.length) % sliders.length);
@@ -30,7 +35,11 @@ const HeroSlider = () => {
   const slide = sliders[current];
 
   return (
-    <section className="hero">
+    <section
+  className="hero"
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}
+>
       {/* Left Side */}
      <div className="hero-left">
   <div key={current} className="hero-content">
@@ -82,11 +91,11 @@ const HeroSlider = () => {
   <div className="hero-img-layer">
     {sliders.map((s, i) => (
       <img
-        key={i}
-        src={s.image_url}
-        alt={s.title}
-        className={`hero-img ${i === current ? "active" : ""}`}
-      />
+  key={i}
+  src={s.image_url}
+  alt={s.title}
+  className={`hero-img ${i === current ? "active" : ""} ${isPaused ? "paused" : ""}`}
+/>
     ))}
   </div>
 
@@ -95,7 +104,7 @@ const HeroSlider = () => {
         <div className="hero-stat">
           <span className="stat-icon">⭐</span>
           <div>
-            <strong>10K+</strong>
+            <strong>4K+</strong>
             <p>Young Authors</p>
           </div>
         </div>

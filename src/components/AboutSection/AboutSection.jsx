@@ -49,7 +49,7 @@ const AboutSection = () => {
       {/* RIGHT */}
       <div className="about-right">
         <div className="about-img-wrap">
-          <div className="about-year-badge">✨ Since 2018</div>
+          <div className="about-year-badge">✨ Since 2020</div>
           <img src={about.image_url} alt={about.title} className="about-img" />
           <div className="about-stat">
             <span className="about-stat-icon">📖</span>
