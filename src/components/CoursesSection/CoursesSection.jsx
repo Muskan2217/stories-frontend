@@ -25,7 +25,10 @@ const CoursesSection = () => {
             {section.badge}
           </span>
         )}
-        <h2 className="courses-title">{section.title}</h2>
+        <h2
+          className="courses-title"
+          dangerouslySetInnerHTML={{ __html: section.title }} // Render HTML content (like <br>) instead of plain text
+        />
         <p className="courses-desc">{section.description}</p>
       </div>
 

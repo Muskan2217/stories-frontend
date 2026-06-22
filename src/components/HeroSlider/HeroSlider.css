@@ -260,10 +260,7 @@
 
 
 @media (max-width: 768px) {
-  .hero-img-layer {
-    height: 250px;
-  }
-
+  
   .hero-img {
     width: 100%;
     height: 100%;

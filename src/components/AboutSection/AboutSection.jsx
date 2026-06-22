@@ -35,7 +35,7 @@ const AboutSection = () => {
             <p>{about.vision_text}</p>
           </div>
           <div className="about-card">
-            <div className="about-card-icon mission-icon">🎯</div>
+            <div className="about-card-icon mission-icon">⚡</div>
             <h4>{about.mission_title}</h4>
             <p>{about.mission_text}</p>
           </div>
@@ -52,7 +52,7 @@ const AboutSection = () => {
           <div className="about-year-badge">✨ Since 2020</div>
           <img src={about.image_url} alt={about.title} className="about-img" />
           <div className="about-stat">
-            <span className="about-stat-icon">📖</span>
+            <span className="about-stat-icon">📚</span>
             <div>
               <strong>{about.stat_number}</strong>
               <p>{about.stat_label}</p>

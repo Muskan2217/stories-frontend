@@ -5,7 +5,7 @@
 
 /* HEADER */
 .courses-header {
-  max-width: 600px;
+  max-width: 80%;
   margin-bottom: 48px;
 }
 
@@ -154,7 +154,7 @@
 
 @media (max-width: 768px) {
   .courses {
-    padding: 40px 20px;
+    padding: 60px 40px;
   }
 
   .courses-title {

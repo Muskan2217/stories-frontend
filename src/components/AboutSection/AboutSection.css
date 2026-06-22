@@ -96,11 +96,11 @@
 }
 
 .vision-icon {
-  background-color: #fff8e6;
+    background: linear-gradient(135deg, #ffd427 0%, #ce9505 100%);
 }
 
 .mission-icon {
-  background-color: #1a3d2b;
+    background: linear-gradient(135deg, #37826f 0%, #025a2c 100%);
 }
 
 .about-card h4 {
@@ -189,7 +189,7 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .about {
     flex-direction: column;
     padding: 40px 20px;
@@ -203,8 +203,15 @@
     flex-direction: column;
   }
 
+  .about-img-wrap {
+  position: relative;
+  text-align: center;
+  }
+
+  .about-left{width:93%;}
+
   .about-img {
-    max-width: 100%;
+    max-width: 93%;
   }
 
   .about-stat {
