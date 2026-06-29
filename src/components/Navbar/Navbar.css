@@ -12,7 +12,7 @@
 }
 
 .logo img {
-  height: 75px; /* Fixed duplicate logo height from your code */
+  height: 75px; 
 }
 
 /* NAV LINKS */
@@ -121,7 +121,7 @@
 .social-sticky {
   position: fixed;
   right: 0;
-  top: 20%;
+  top: 25%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -206,7 +206,7 @@
     width: calc(100% - 40px);
   }
 
-  /* Mobile screen par handle karne ke liye slightly adjustment */
+  /* Mobile screen adjustment */
   .social-sticky {
     gap: 5px;
   }
@@ -218,4 +218,17 @@
   .social-icon:hover {
     width: 40px;
   }
+}
+
+@media (max-width: 450px) {
+.social-sticky {
+  top: 75%;
+}
+.logo img {
+  height: 55px; 
+}
+    .join-btn {
+        margin:10px;
+    }
+
 }

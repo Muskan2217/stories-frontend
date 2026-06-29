@@ -45,7 +45,7 @@
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 45px;
+  /* font-size: 45px; */
   color: var(--color-white);
   line-height: 1.1;
   margin-bottom: 20px;
@@ -238,10 +238,10 @@
   .hero-right{
      width: 95%;
   }
-
+/* 
   .hero-title {
     font-size: 30px;
-  }
+  } */
 
   .hero-btns {
     justify-content: center;

@@ -45,8 +45,8 @@ body {
 
 h2 {
   font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: clamp(28px, 2.5vw + 1rem, 48px);
+  font-weight: 700;
+  font-size: clamp(20px, 2.5vw + 1rem, 48px);
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--color-primary);
