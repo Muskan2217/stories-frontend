@@ -1,13 +1,11 @@
 import "./StorytellingSection.css";
 
-
-
 // static section ---- StorytellingSection
 
 const features = [
-  { icon: "📅", text: "Weekly live sessions, every weekend" },
-  { icon: "👥", text: "Small batches for personal attention" },
-  { icon: "✨", text: "Props, costumes & imagination tools" },
+  { icon: "/calendar.webp", text: "Weekly live sessions, every weekend" },
+  { icon: "/users.webp", text: "Small batches for personal attention" },
+  { icon: "/sparkle.webp", text: "Props, costumes & imagination tools" },
 ];
 
 const StorytellingSection = () => {
@@ -22,16 +20,18 @@ const StorytellingSection = () => {
         </h2>
 
         <p className="storytelling-desc">
-          Weekly immersive sessions packed with props, voices, and magic.
-          Where every child becomes part of the story.
+          Weekly immersive sessions packed with props, voices, and magic. Where
+          every child becomes part of the story.
         </p>
 
         <ul className="storytelling-features">
           {features.map((f, i) => (
             <li key={i} className="storytelling-feature">
-              <span className="storytelling-feature-icon">{f.icon}</span>
-              <span>{f.text}</span>
-            </li>
+  <div className="storytelling-feature-icon">
+    <img src={f.icon} alt="icon" />
+  </div>
+  <span>{f.text}</span>
+</li>
           ))}
         </ul>
 

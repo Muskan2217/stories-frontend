@@ -30,13 +30,13 @@
   width: fit-content;
 }
 
-/* .achievers-title {
+.achievers-title {
   font-size: 48px;
   font-weight: 800;
   color: #1a3d2b;
   line-height: 1.15;
   margin: 0;
-} */
+}
 
 /* ARROWS */
 .achievers-arrows {
@@ -58,37 +58,36 @@
   justify-content: center;
   transition: all 0.3s;
   line-height: 1;
+  user-select: none;
 }
 
-.achievers-arrow:hover:not(.disabled) {
+.achievers-arrow:hover {
   background: #1a3d2b;
   color: #fff;
-}
-
-.achievers-arrow.disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  border-color: #999;
-  color: #999;
 }
 
 /* SLIDER */
 .achievers-slider-wrap {
   overflow: hidden;
   width: 100%;
+  cursor: grab;
+}
+
+.achievers-slider-wrap:active {
+  cursor: grabbing;
 }
 
 .achievers-track {
   display: flex;
-  gap: 16px;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 /* CARD */
 .achiever-card {
-  flex: 0 0 calc(25% - 12px);
-  min-width: calc(25% - 12px);
+  padding-right: 16px;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .achiever-img-wrap {
@@ -96,7 +95,6 @@
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
-  cursor: pointer;
 }
 
 /* IMAGE SCALE ON HOVER */
@@ -106,6 +104,7 @@
   object-fit: cover;
   object-position: center top;
   transition: transform 0.5s ease;
+  pointer-events: none;
 }
 
 .achiever-card:hover .achiever-img {
@@ -154,11 +153,6 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .achiever-card {
-    flex: 0 0 calc(33.33% - 12px);
-    min-width: calc(33.33% - 12px);
-  }
-
   .achievers-title {
     font-size: 36px;
   }
@@ -173,21 +167,30 @@
     font-size: 28px;
   }
 
-  .achiever-card {
-    flex: 0 0 calc(50% - 8px);
-    min-width: calc(50% - 8px);
+  .achievers-header-left {
+    width: 90%;
+  }
+
+  .achievers-arrows {
+    margin-right: 30px;
+    margin-bottom: -15px;
   }
 }
 
 @media (max-width: 480px) {
-  .achiever-card {
-    flex: 0 0 85%;
-    min-width: 85%;
-  }
-
   .achievers-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+
+  .achievers-header-left {
+    width: 97%;
+  }
+
+  .achievers-arrows {
+    width: 95%;
+    margin-bottom: -15px;
+    justify-content: flex-end;
   }
 }

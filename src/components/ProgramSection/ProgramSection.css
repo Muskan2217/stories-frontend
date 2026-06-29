@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px;
+  padding: 30px 80px;
   gap: 60px;
   background-color: #faf9f6;
 }
@@ -183,5 +183,17 @@
     transform: translateX(-50%);
     bottom: -50px;
     white-space: nowrap;
+  }
+
+  .program-overlay strong {
+  font-size: 25px;
+}
+}
+/* mobile view */
+
+@media (max-width: 768px) {
+  .courses-header {
+    width: 100%;
+    max-width: 100%;
   }
 }

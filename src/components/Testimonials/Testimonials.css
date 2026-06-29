@@ -27,14 +27,14 @@
   border-radius: 20px;
 }
 
-/* .testimonials-title {
+.testimonials-title {
   font-size: 48px;
   font-weight: 800;
   color: #1a3d2b;
   line-height: 1.15;
   margin: 0;
   text-align: center;
-} */
+}
 
 /* CARD */
 .testimonials-card {
@@ -69,7 +69,7 @@
 .testimonials-quote {
   font-size: 24px;
   font-style: italic;
-  color: var(--color-primary);
+  color: #1a3d2b;
   line-height: 1.7;
   text-align: center;
   margin: 0;
@@ -88,12 +88,29 @@
   }
 }
 
-/* AUTHOR */
+/* LEFT-RIGHT ALIGNMENT STYLES */
+.testimonials-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Space between img and text */
+}
+
+.testimonials-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1a3d2b;
+  flex-shrink: 0;
+}
+
+/* AUTHOR TEXT LEFT-ALIGNED (With respect to the image) */
 .testimonials-author {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  align-items: flex-start; /* Image ke side me text left-align karega */
+  gap: 2px;
 }
 
 .testimonials-author strong {

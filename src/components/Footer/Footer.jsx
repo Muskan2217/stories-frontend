@@ -66,16 +66,17 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Footer */}
-      <div className="footer-bottom">
-        <p>© 2026 Stories By Children. All rights reserved.</p>
-        <div className="footer-social">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-youtube"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-        </div>
-      </div>
+     
+{/* Bottom Footer */}
+<div className="footer-bottom">
+  <p>© 2026 Stories By Children. All rights reserved.</p>
+  <div className="footer-social">
+    <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
+    <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp"></i></a>
+  </div>
+</div>
 
     </footer>
   );

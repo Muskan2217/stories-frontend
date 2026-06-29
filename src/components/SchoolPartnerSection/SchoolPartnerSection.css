@@ -1,8 +1,30 @@
+.school_wrapper{
+   padding:  30px 80px 2px;
+}
+
+
+.school-badge {
+  display: inline-block;
+  background-color: #edeae3;
+  color: #1a3d2b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  width: fit-content;
+ margin-bottom: 20px;
+
+}
+
+.school-title {
+ width: 66%;
+}
+
 .school {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 80px;
   gap: 60px;
   background-color: #faf9f6;
 }
@@ -16,25 +38,6 @@
   gap: 20px;
 }
 
-.school-badge {
-  display: inline-block;
-  background-color: #edeae3;
-  color: #1a3d2b;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  width: fit-content;
-}
-
-/* .school-title {
-  font-size: 44px;
-  font-weight: 800;
-  color: #1a3d2b;
-  line-height: 1.15;
-  margin: 0;
-} */
 
 .school-desc {
   font-size: 16px;
@@ -85,7 +88,7 @@
   align-items: center;
   /* vertically centers grid with left content */
   align-self: center;
-  margin-top: 180px;
+  margin-top: 30px;
 }
 
 .school-grid {
@@ -117,16 +120,11 @@
               0 24px 48px rgba(0, 0, 0, 0.07);
 }
 
-/* highlighted card — second one */
-/* .school-card:nth-child(2) {
-  border: 1.5px solid #d4a017;
-  background: #fffdf5;
-} */
 
 .school-card-icon {
   width: 52px;
   height: 52px;
-  background-color: #d4a017;
+  background-color: var(--color-primary-hover);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -161,9 +159,15 @@
 }
 
 @media (max-width: 768px) {
+
+  .school_wrapper{
+   padding:  30px 20px;
+}
+
   .school {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 0px;
+    gap:5px;
   }
 
   .school-left {
@@ -171,6 +175,7 @@
   }
 
   .school-title {
+    width: 100%;
     font-size: 30px;
   }
 

@@ -17,6 +17,7 @@ import CommunitySection from "./components/CommunitySection/CommunitySection";
 import AchieversSection from "./components/AchieversSection/AchieversSection";
 import GallerySection from "./components/GallerySection/GallerySection";
 import ContestSection from "./components/ContestSection/ContestSection";
+import SchoolEngagement from "./components/SchoolEngagement/SchoolEngagement";
 
 //return
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <AchieversSection />
       <GallerySection />
       <SchoolsMarquee />
+      <SchoolEngagement />
       <SchoolPartnerBanner />
       <Testimonials />
       <CTASection />

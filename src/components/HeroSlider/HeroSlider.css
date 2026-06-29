@@ -273,4 +273,9 @@
     padding: 7px;
 }
 
+.hero-stat strong {
+  font-size: 20px;
+}
+.hero-stat{font-size: 13px;}
+
 }

@@ -1,35 +1,45 @@
 import "./SchoolsMarquee.css";
 
+// Dynamic import for all image assets from the school-logos folder
+const images = import.meta.glob("../../assets/school-logos/*.{png,jpg,jpeg,webp}", { eager: true });
+
 const schools = [
-  { name: "Inventure Academy", logo: "/school-logos/inventure.png" },
-  { name: "Oakridge International", logo: "/school-logos/oakridge.png" },
-  { name: "Heritage School", logo: "/school-logos/heritage.png" },
-  { name: "Pathways World", logo: "/school-logos/pathways.png" },
-  { name: "Vibgyor High", logo: "/school-logos/vibgyor.png" },
-  { name: "Kalpa Academy", logo: "/school-logos/kalpa.png" },
-  { name: "Podar International", logo: "/school-logos/podar.png" },
-  { name: "Ryan International", logo: "/school-logos/ryan.png" },
+  { name: "FanatiXxGold", logoPath: "FanatiXxGold.png" },
+  { name: "Oakridge International", logoPath: "oakridge.png" },
+  { name: "Heritage School", logoPath: "heritage.png" },
+  { name: "Pathways World", logoPath: "pathways.png" },
+  { name: "Vibgyor High", logoPath: "vibgyor.png" },
+  { name: "Kalpa Academy", logoPath: "kalpa.png" },
+  { name: "Podar International", logoPath: "podar.png" },
+  { name: "Ryan International", logoPath: "ryan.png" },
 ];
 
 const SchoolsMarquee = () => {
+  // Helper to extract the proper built URL of the optimized image
+  const getLogoUrl = (fileName) => {
+    const key = `../../assets/school-logos/${fileName}`;
+    return images[key] ? images[key].default : "";
+  };
+
   return (
     <section className="marquee-section">
+      {/* HEADER SECTION */}
       <div className="marquee-header">
         <span className="marquee-label">OUR ASSOCIATIONS</span>
         <h2 className="marquee-title">Trusted by India's leading schools</h2>
       </div>
 
+      {/* TRACK WRAPPER WITH FADE EDGES */}
       <div className="marquee-track-wrap">
-        {/* fade edges */}
         <div className="marquee-fade-left" />
         <div className="marquee-fade-right" />
 
         <div className="marquee-track">
-          {/* duplicate for seamless loop */}
+          {/* Combined data loop using spread operator for seamless infinite loop */}
           {[...schools, ...schools].map((school, i) => (
             <div className="marquee-item" key={i}>
               <img
-                src={school.logo}
+                src={getLogoUrl(school.logoPath)}
                 alt={school.name}
                 className="marquee-logo"
               />

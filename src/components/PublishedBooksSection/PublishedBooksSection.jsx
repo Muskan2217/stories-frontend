@@ -18,7 +18,7 @@ const PublishedBooksSection = () => {
       );
   }, []);
 
-  // ✅ loading state
+  // loading state
   if (!data) return <p>Loading...</p>;
 
   return (

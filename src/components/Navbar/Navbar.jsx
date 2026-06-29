@@ -5,6 +5,7 @@ import logo from "../../assets/images/logo.png";
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
@@ -21,25 +22,23 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Black Bar */}
-      <div className="top-bar">
-        <a href="#"><i className="fab fa-facebook"></i></a>
-        <a href="#"><i className="fab fa-instagram"></i></a>
-        <a href="#"><i className="fab fa-linkedin"></i></a>
-      </div>
+      {/* Global Sticky Social Buttons (Page load par right side se aayenge) */}
+     <div className="social-sticky">
+  <a href="#" className="social-icon facebook" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
+  <a href="#" className="social-icon instagram" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+  <a href="#" className="social-icon linkedin" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+  <a href="https://wa.me/919876543210" className="social-icon whatsapp" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp"></i></a>
+</div>
 
       {/* Main Navbar */}
       <nav className="navbar">
-       <div className="logo">
-  <a href="/">
-    <img src={logo} alt="Stories By Children" />
-  </a>
-  
-</div>
+        <div className="logo">
+          <a href="/">
+            <img src={logo} alt="Stories By Children" />
+          </a>
+        </div>
 
-
-
-    {/*  Nav links */}
+        {/* Nav links */}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           {navItems.map((item, index) => (
             <li key={index} className="nav-item"
@@ -56,15 +55,14 @@ const Navbar = () => {
               )}
             </li>
           ))}
-          
         </ul>
 
         <button className="join-btn">Login / Sign Up</button>
 
-         {/*  Hamburger icon */}
-  <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-  ☰
-  </div>
+        {/* Hamburger icon */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
       </nav>
     </>
   );

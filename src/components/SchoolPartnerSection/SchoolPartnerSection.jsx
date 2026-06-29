@@ -1,8 +1,8 @@
 import "./SchoolPartnerSection.css";
-
+// static section
 const features = [
   {
-    icon: "🏛",
+    icon: "🏷️",
     title: "Branding Opportunity",
     text: "Position your school as a leader in literary education.",
   },
@@ -12,12 +12,12 @@ const features = [
     text: "An annually published book authored by your students.",
   },
   {
-    icon: "👥",
+    icon: "👨‍👨",
     title: "Student Engagement",
     text: "Workshops, contests & sessions that energize classrooms.",
   },
   {
-    icon: "✦",
+    icon: "✨",
     title: "Creative Ecosystem",
     text: "Build a culture of writing, reading & expression.",
   },
@@ -25,43 +25,47 @@ const features = [
 
 const SchoolPartnerSection = () => {
   return (
-    <section className="school">
-      {/* LEFT */}
-      <div className="school-left">
-        <span className="school-badge">FOR SCHOOLS</span>
+    // title area
 
-        <h2 className="school-title">
-          Partner With India's Leading Children's Publishing Platform
-        </h2>
+    <section className="school_wrapper">
+      <span className="school-badge">FOR SCHOOLS</span>
+      <h2 className="school-title">
+        Partner With India's Leading Children's Publishing Platform
+      </h2>
 
-        <p className="school-desc">
-          Bring world-class literary programs to your school and unlock
-          measurable creative outcomes for every student.
-        </p>
+      <div className="school">
+        {/* LEFT */}
 
-        <div className="school-img-wrap">
-          <img
-            src="/school-images/school.jpg"
-            alt="School Partnership"
-            className="school-img"
-          />
+        <div className="school-left">
+          <p className="school-desc">
+            Bring world-class literary programs to your school and unlock
+            measurable creative outcomes for every student.
+          </p>
+
+          <div className="school-img-wrap">
+            <img
+              src="/school-images/school.jpg"
+              alt="School Partnership"
+              className="school-img"
+            />
+          </div>
+
+          <a href="/partner" className="school-btn">
+            Partner With Us →
+          </a>
         </div>
 
-        <a href="/partner" className="school-btn">
-          Partner With Us →
-        </a>
-      </div>
-
-      {/* RIGHT */}
-      <div className="school-right">
-        <div className="school-grid">
-          {features.map((f, i) => (
-            <div className="school-card" key={i}>
-              <div className="school-card-icon">{f.icon}</div>
-              <h4 className="school-card-title">{f.title}</h4>
-              <p className="school-card-text">{f.text}</p>
-            </div>
-          ))}
+        {/* RIGHT */}
+        <div className="school-right">
+          <div className="school-grid">
+            {features.map((f, i) => (
+              <div className="school-card" key={i}>
+                <div className="school-card-icon">{f.icon}</div>
+                <h4 className="school-card-title">{f.title}</h4>
+                <p className="school-card-text">{f.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
