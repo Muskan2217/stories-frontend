@@ -10,15 +10,41 @@ const Navbar = () => {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
 
-  const navItems = [
-    { label: "Who We Are?", dropdown: ["About Us", "Partnership", "Midea"] },
-    { label: "What We Offer?", dropdown: ["Budding Authors Contest", "School Story Book", "Word Ninjas Programs", "Storytelling Sessions", "Stories"] },
-    { label: "Who Is It For?", dropdown: ["Schools", "Parents", "Kids"] },
-    { label: "Stories", dropdown: ["Read kid's Stories", "By Story Books"] },
-    { label: "Shop", dropdown: null },
-    { label: "Gallery", dropdown: null },
-    { label: "Contact Us", dropdown: null },
-  ];
+const navItems = [
+  {
+    label: "Who We Are?",
+    dropdown: ["About Us", "Partnership", "Media"],
+  },
+  {
+    label: "What We Offer?",
+    dropdown: [
+      "Budding Authors Contest",
+      "School Story Book",
+      "Word Ninjas Programs",
+      "Storytelling Sessions",
+      "Stories",
+    ],
+  },
+  {
+    label: "Who Is It For?",
+    dropdown: ["Schools", "Parents", "Kids"],
+  },
+  {
+    label: "Stories",
+    dropdown: ["Read Kid's Stories", "Buy Story Books"],
+  },
+  {
+    label: "Shop",
+    dropdown: null,
+  },
+  {
+    label: "More",
+    dropdown: [
+      "Gallery",
+      "Contact Us",
+    ],
+  },
+];
 
   return (
     <>

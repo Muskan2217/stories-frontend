@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-primary-hover);
-  padding: 100px 80px;
+  padding: 100px 80px 160px;
   gap: 40px;
   overflow: hidden;
   cursor: grab;
@@ -230,7 +230,7 @@
 @media (max-width: 1000px) {
   .hero {
     flex-direction: column;
-    padding: 30px 20px 65px;
+    padding: 30px 20px 125px;
     gap:30px;
     text-align: center;
   }
