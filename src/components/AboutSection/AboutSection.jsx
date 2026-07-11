@@ -6,11 +6,12 @@ import { API } from "../../config/api";
 const AboutSection = () => {
   const [about, setAbout] = useState(null);
 
- useEffect(() => {
-  axios.get(API.aboutSection)
-    .then((res) => setAbout(res.data))
-    .catch((err) => console.error(err));
-}, []);
+  useEffect(() => {
+    axios
+      .get(API.aboutSection)
+      .then((res) => setAbout(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
   if (!about) return null;
 
@@ -30,12 +31,17 @@ const AboutSection = () => {
 
         <div className="about-cards">
           <div className="about-card">
-            <div className="about-card-icon vision-icon">👁</div>
+            <div className="about-card-icon vision-icon">
+              <img src="svg/vision.svg" alt="Vision" />
+            </div>
             <h4>{about.vision_title}</h4>
             <p>{about.vision_text}</p>
           </div>
+
           <div className="about-card">
-            <div className="about-card-icon mission-icon">⚡</div>
+            <div className="about-card-icon mission-icon">
+              <img src="svg/mission.svg" alt="Mission" />
+            </div>
             <h4>{about.mission_title}</h4>
             <p>{about.mission_text}</p>
           </div>

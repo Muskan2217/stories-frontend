@@ -11,6 +11,7 @@ import SchoolPartnerSection from "../../components/SchoolPartnerSection/SchoolPa
 import PublishedBooksSection from "../../components/PublishedBooksSection/PublishedBooksSection";
 import FeaturedStory from "../../components/FeaturedStory/FeaturedStory";
 import SchoolsMarquee from "../../components/SchoolsMarquee/SchoolsMarquee";
+import CorporateAssociations from "../../components/CorporateAssociations/CorporateAssociations";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import SchoolPartnerBanner from "../../components/SchoolPartnerBanner/SchoolPartnerBanner";
 import NewsSection from "../../components/NewsSection/NewsSection";
@@ -18,6 +19,7 @@ import CommunitySection from "../../components/CommunitySection/CommunitySection
 import AchieversSection from "../../components/AchieversSection/AchieversSection";
 import GallerySection from "../../components/GallerySection/GallerySection";
 import ContestSection from "../../components/ContestSection/ContestSection";
+import WinnerSection from "../../components/WinnerSection/WinnerSection";
 
 const HomePage = () => {
   return (
@@ -34,10 +36,12 @@ const HomePage = () => {
       <FeaturedStory />
       <NewsSection />
       <ContestSection />
+      <WinnerSection />
       <CommunitySection />
       <AchieversSection />
       <GallerySection />
       <SchoolsMarquee />
+      <CorporateAssociations />
       <SchoolPartnerBanner />
       <Testimonials />
       <CTASection />

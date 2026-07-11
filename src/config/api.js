@@ -23,6 +23,8 @@ export const API = {
   publishedBooks: `${BASE_URL}/published-books`,
   featuredStory: `${BASE_URL}/featured-story`,
   newsSection: `${BASE_URL}/news-section`,
+  contestBanner: `${BASE_URL}/contest-banner`,
+winnerBanner: `${BASE_URL}/winner-banner`,
   communitySection: `${BASE_URL}/community-section`,
   achieversSection: `${BASE_URL}/achievers-section`,
   gallerySection: `${BASE_URL}/gallery-section`,

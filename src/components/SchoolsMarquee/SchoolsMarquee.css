@@ -76,6 +76,19 @@
   animation: marquee-scroll 30s linear infinite;
 }
 
+/* ANIMATION */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
 /* Stops the marquee when you hover your mouse/hand over it */
 .marquee-track:hover {
   animation-play-state: paused;
@@ -86,66 +99,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 48px;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  min-width: 230px;
+  height: 120px;
+  margin: 0 18px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all .3s ease;
 }
 
-.marquee-item:last-child {
-  border-right: none;
+.marquee-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  border-color: rgba(211,155,23,.35);
 }
 
-/* LOGO - Bigger size, real colors, and no grayscale */
+/* LOGO */
 .marquee-logo {
-  height: 55px;
-  width: auto;
-  max-width: 180px; 
+  width: 180px;
+  height: 80px;
+  border: 1px solid #dfdfdf;
+  border-radius: 7px;
+
   object-fit: contain;
-  filter: none; 
-  opacity: 1; 
-  transition: transform 0.3s ease;
+  object-position: center;
+
+  transition: transform .3s ease;
 }
 
-/* Subtle popup effect on hover */
 .marquee-item:hover .marquee-logo {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* ANIMATION */
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .marquee-section {
-    padding: 60px 20px;
+/* mobile */
+
+@media (max-width:768px){
+
+  .marquee-item{
+    min-width:170px;
+    height:90px;
+    padding:14px;
+    margin:0 10px;
   }
 
-  .marquee-header {
-    padding: 0 20px;
-    margin-bottom: 32px;
-  }
-
-  .marquee-title {
-    font-size: 24px;
-  }
-
-  .marquee-fade-left,
-  .marquee-fade-right {
-    width: 80px;
-  }
-
-  .marquee-item {
-    padding: 0 32px;
-  }
-
-  /* Responsive logo size for smaller mobile screens */
-  .marquee-logo {
-    height: 40px;
+  .marquee-logo{
+    width:130px;
+    height:55px;
   }
 }

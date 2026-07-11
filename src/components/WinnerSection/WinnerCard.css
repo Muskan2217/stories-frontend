@@ -1,0 +1,219 @@
+/* .winner-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  height: 100%;
+} */
+
+.winner-rank {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #facc15;
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.winner-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f3f4f6;
+}
+
+.winner-medal {
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.medal-gold {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.medal-silver {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.medal-bronze {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+.winner-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.winner-age {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.winner-story-title {
+  font-size: 14px;
+  font-style: italic;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/* .view-story-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #14532d;
+  color: #14532d;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+} */
+
+.view-story-btn:hover {
+  background: #14532d;
+  color: #fff;
+}
+
+
+
+.winner-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 20px 10px 16px rgba(59, 109, 80, 0.09);
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.winner-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 18px;
+  padding: 4.5px;
+  background: conic-gradient(
+    from var(--angle),
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #1dd1a1,
+    #f9f696,
+    #ff6b6b
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotate-border 6s linear infinite;
+  z-index: -1;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
+
+/* story cta */
+
+.view-story-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+  
+}
+
+.view-story-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 2.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.view-story-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 1st card — Gold */
+.winner-swiper .swiper-slide:nth-child(1) .view-story-btn {
+  background: linear-gradient(145deg, #ffe259, #ffa751);
+  color: #5c3d00;
+}
+
+/* 2nd card — Silver */
+.winner-swiper .swiper-slide:nth-child(2) .view-story-btn {
+  background: linear-gradient(145deg, #f0f0f0, #b8b8b8);
+  color: #3a3a3a;
+}
+
+/* 3rd card — Bronze */
+.winner-swiper .swiper-slide:nth-child(3) .view-story-btn {
+  background: linear-gradient(145deg, #e0a875, #a9591f);
+  color: #3d1f00;
+}

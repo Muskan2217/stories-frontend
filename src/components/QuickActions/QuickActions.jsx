@@ -1,9 +1,12 @@
 import "./QuickActions.css";
 import { FaBookOpen, FaPenNib, FaTrophy, FaArrowRight } from "react-icons/fa";
+import ReadIcon from "../../assets/quickactions/read.png";
+import WriteIcon from "../../assets/quickactions/write.png";
+import ContestIcon from "../../assets/quickactions/contest.png";
 
 const actions = [
   {
-    icon: <FaBookOpen />,
+    icon: <img src={ReadIcon} alt="Read Stories" />,
     title: "Read Stories",
     text: "Explore amazing stories written by young authors.",
     btn: "Read Stories",
@@ -11,7 +14,7 @@ const actions = [
     primary: false,
   },
   {
-    icon: <FaPenNib />,
+    icon: <img src={WriteIcon} alt="Write Stories" />,
     title: "Write Stories",
     text: "Share your imagination with the world. Login or sign up to get started.",
     btn: "Write Stories",
@@ -19,7 +22,7 @@ const actions = [
     primary: true,
   },
   {
-    icon: <FaTrophy />,
+    icon: <img src={ContestIcon} alt="Join Contest" />,
     title: "Join the Contest",
     text: "Participate in exciting contests and win amazing prizes.",
     btn: "Join the Contest",

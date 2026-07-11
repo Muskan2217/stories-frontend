@@ -1,0 +1,44 @@
+.contest-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.contest-tab {
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contest-tab:hover {
+  border-color: #16a34a;
+}
+
+.contest-tab.active {
+  background: #14532d;
+  color: #fff;
+  border-color: #14532d;
+}
+
+.contest-tab-icon {
+  margin-right: 6px;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+.contest-tab {
+    padding: 7px 10px;
+    font-size: 10px !important;
+}
+
+
+}

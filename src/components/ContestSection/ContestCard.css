@@ -1,0 +1,185 @@
+.contest-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  cursor: grab;
+  border: 1.4px dashed green;
+
+}
+
+.contest-category-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: #baffc1;
+    color: #1a3d2b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: -22px;
+    z-index: 9;
+    box-shadow:1px px 20px grey;
+}
+
+.contest-card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.contest-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.contest-description {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.contest-closing-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 4px;
+}
+
+.contest-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.contest-age-badge {
+  font-size: 12px;
+  color: #565957;
+  font-weight: 600;
+}
+
+.join-contest-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #14532d;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.join-contest-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* ==========================================================================
+   CONTEST SECTION - VISUAL THEMING (DYNAMIC COLORS BASED ON CARD POSITION)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1st Card Theme (e.g., Story Writing)
+   Light Blue Badge with Matching Dark Blue CTA Button
+   -------------------------------------------------------------------------- */
+/* Category Badge */
+.swiper-slide:nth-child(5n+1) .contest-category-badge {
+  background: #e3f2fd !important;
+  color: #0d47a1 !important;
+}
+/* CTA Button */
+.swiper-slide:nth-child(5n+1) .join-contest-btn {
+  background: #0d47a1 !important;
+  color: #ffffff !important;
+}
+.swiper-slide:nth-child(5n+1) .join-contest-btn:hover {
+  background: #0a3981 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   2nd Card Theme (e.g., Poetry)
+  Light Pink Badge with Matching Dark Pink/Red CTA Button
+   -------------------------------------------------------------------------- */
+/* Category Badge */
+.swiper-slide:nth-child(5n+2) .contest-category-badge {
+  background: #fce4ec !important;
+  color: #880e4f !important;
+}
+/* CTA Button */
+.swiper-slide:nth-child(5n+2) .join-contest-btn {
+  background: #880e4f !important;
+  color: #ffffff !important;
+}
+.swiper-slide:nth-child(5n+2) .join-contest-btn:hover {
+  background: #6a093d !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   3rd Card Theme (e.g., Reading Contest)
+  Light Green Badge with Matching Dark Green CTA Button
+   -------------------------------------------------------------------------- */
+/* Category Badge */
+.swiper-slide:nth-child(5n+3) .contest-category-badge {
+  background: #e8f5e9 !important;
+  color: #1b5e20 !important;
+}
+/* CTA Button */
+.swiper-slide:nth-child(5n+3) .join-contest-btn {
+  background: #1b5e20 !important;
+  color: #ffffff !important;
+}
+.swiper-slide:nth-child(5n+3) .join-contest-btn:hover {
+  background: #144718 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   4th Card Theme (e.g., Essay Writing)
+  Light Orange Badge with Matching Dark Orange CTA Button
+   -------------------------------------------------------------------------- */
+/* Category Badge */
+.swiper-slide:nth-child(5n+4) .contest-category-badge {
+  background: #fffad9 !important;
+  color: #5a3f00 !important;
+}
+/* CTA Button */
+.swiper-slide:nth-child(5n+4) .join-contest-btn {
+  background:#d39b17 !important;
+  color: #ffffff !important;
+}
+.swiper-slide:nth-child(5n+4) .join-contest-btn:hover {
+  background: #be880b !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   5th Card Theme (e.g., General / New Category)
+   Light Purple Badge with Matching Dark Purple CTA Button
+   -------------------------------------------------------------------------- */
+/* Category Badge */
+.swiper-slide:nth-child(5n+5) .contest-category-badge {
+  background: #f3e5f5 !important;
+  color: #4a148c !important;
+}
+/* CTA Button */
+.swiper-slide:nth-child(5n+5) .join-contest-btn {
+  background: #4a148c !important;
+  color: #ffffff !important;
+}
+.swiper-slide:nth-child(5n+5) .join-contest-btn:hover {
+  background: #380e6b !important;
+}

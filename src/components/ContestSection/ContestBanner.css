@@ -1,0 +1,50 @@
+.contest-banner {
+  position: relative;
+  flex: 1 1 300px;
+  max-width: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 320px;
+  background: #14532d;
+}
+
+.contest-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+}
+
+.contest-banner-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.contest-banner-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.contest-banner-contest-name {
+  color: #facc15;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.contest-banner-edition {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  width: fit-content;
+}

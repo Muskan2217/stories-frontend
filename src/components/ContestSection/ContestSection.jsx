@@ -1,191 +1,117 @@
+
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { API } from "../../config/api";
-import "./ContestSection.css"; 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { API, apiClient } from "../../config/api";
+import AgeGroupTabs from "./AgeGroupTabs";
+import ContestCard from "./ContestCard";
+import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
+import EmptyState from "../EmptyState/EmptyState";
+import "./ContestSection.css";
 
-const TABS = ["Story Writing", "Reading Contest", "Poetry Contest"];
-
-const medalColors = {
-  GOLD: "medal-gold",
-  SILVER: "medal-silver",
-  BRONZE: "medal-bronze",
-};
-
-const Countdown = ({ closesAt }) => {
-  const calc = () => {
-    const diff = new Date(closesAt) - new Date();
-    if (diff <= 0) return { days: 0, hrs: 0, min: 0 };
-    return {
-      days: Math.floor(diff / 86400000),
-      hrs: Math.floor((diff % 86400000) / 3600000),
-      min: Math.floor((diff % 3600000) / 60000),
-    };
-  };
-
-  const [time, setTime] = useState(calc());
-
-  useEffect(() => {
-    const t = setInterval(() => setTime(calc()), 60000);
-    return () => clearInterval(t);
-  }, [closesAt]);
-
-  return (
-    <div className="countdown">
-      {[
-        ["days", time.days],
-        ["hrs", time.hrs],
-        ["min", time.min],
-      ].map(([label, val]) => (
-        <div className="countdown-block" key={label}>
-          <span className="countdown-num">{String(val).padStart(2, "0")}</span>
-          <span className="countdown-label">{label.toUpperCase()}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
+const AGE_GROUPS = [
+  { label: "6-8 Years", slug: "6-8-years", icon: "🧒" },
+  { label: "9-12 Years", slug: "9-12-years", icon: "👦" },
+  { label: "13-16 Years", slug: "13-16-years", icon: "🧑" },
+];
 
 const ContestSection = () => {
+  const [ageGroup, setAgeGroup] = useState(AGE_GROUPS[0].slug);
   const [contests, setContests] = useState([]);
-  const [winners, setWinners] = useState([]);
-  const [current, setCurrent] = useState(0);
-  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(API.contests)
-      .then((res) => setContests(res.data))
-      .catch((err) => console.error("Error fetching contests:", err));
-  }, []);
+    const fetchContests = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await apiClient.get(API.contests, {
+          params: { age_group: ageGroup, status: "ongoing" },
+        });
+        setContests(res.data.data || []);
+      } catch (err) {
+        setError("Failed to load contests.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  useEffect(() => {
-    axios
-      .get(`${API.winners}?type=${encodeURIComponent(activeTab)}`)
-      .then((res) => setWinners(res.data))
-      .catch((err) => console.error("Error fetching winners:", err));
-  }, [activeTab]);
-
-  const prev = () => setCurrent((c) => Math.max(0, c - 1));
-  const next = () => setCurrent((c) => Math.min(contests.length - 1, c + 1));
-
-  const contest = contests[current];
+    fetchContests();
+  }, [ageGroup]);
 
   return (
     <section className="contest-section">
-      {/* LEFT — ONGOING CONTESTS */}
-      <div className="contest-left">
-        <div className="contest-left-header">
-          <div className="contest-left-title">
-            <span className="contest-trophy">🏆</span>
-            <h3>Ongoing Contests</h3>
-          </div>
-          <a href="/contests" className="contest-view-all">
-            VIEW ALL →
-          </a>
-        </div>
+        <div className="contest-intro">
 
-        {contest && (
-          <div className="contest-card">
-            <div className="contest-card-top">
-              <span className="contest-category">{contest.category}</span>
-            </div>
+  <div className="contest-badge">
+    ✨ CONTEST & RESULTS
+  </div>
 
-            <h2 className="contest-title">{contest.title}</h2>
-            <p className="contest-desc">{contest.description}</p>
+  <h2>
+    Celebrating Young Voices
+  </h2>
 
-            <div className="contest-closes">
-              <span className="contest-closes-label">
-                ⏱ CLOSES IN{" "}
-                {new Date(contest.closes_at) - new Date() > 0
-                  ? `${Math.floor((new Date(contest.closes_at) - new Date()) / 86400000)} DAYS`
-                  : "CLOSED"}
-              </span>
-            </div>
-
-            <Countdown closesAt={contest.closes_at} />
-
-            <a href={contest.btn_url} className="contest-join-btn">
-              {contest.btn_label} →
-            </a>
-          </div>
-        )}
-
-        {/* DOTS */}
-        <div className="contest-nav">
-          <button className="contest-arrow" onClick={prev}>
-            ‹
-          </button>
-          <div className="contest-dots">
-            {contests.map((_, i) => (
-              <span
-                key={i}
-                className={`contest-dot ${i === current ? "active" : ""}`}
-                onClick={() => setCurrent(i)}
-              />
-            ))}
-          </div>
-          <button className="contest-arrow" onClick={next}>
-            ›
-          </button>
-        </div>
+  <p className="contest-sub-heading">
+    Discover ongoing contests, meet our latest winners,
+    and find your child's next stage to shine.
+  </p>
+<div className="devider"></div>
+</div>
+      <div className="contest-section-header">
+        <h2>🏆 Ongoing Contests</h2>
+        <a href="/contests" className="view-all-link">
+          VIEW ALL CONTESTS →
+        </a>
       </div>
 
-      {/* RIGHT — LATEST WINNERS */}
-      <div className="contest-right">
-        <div className="contest-right-header">
-          <div className="contest-right-title">
-            <span className="contest-medal-icon">🥇</span>
-            <h3>Latest Winners</h3>
-          </div>
-          <a href="/winners" className="contest-view-all">
-            WINNERS GALLERY →
-          </a>
-        </div>
+      <AgeGroupTabs
+        ageGroups={AGE_GROUPS}
+        activeAgeGroup={ageGroup}
+        onChange={setAgeGroup}
+      />
 
-        {/* TABS */}
-        <div className="contest-tabs">
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              className={`contest-tab ${activeTab === tab ? "active" : ""}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab === "Story Writing" && "📖 "}
-              {tab === "Reading Contest" && "📚 "}
-              {tab === "Poetry Contest" && "✏️ "}
-              {tab.toUpperCase()}
-            </button>
-          ))}
-        </div>
+      {loading && <LoadingSkeleton count={3} type="contest" />}
 
-        {/* WINNER LIST */}
-        <div className="winners-list">
-          {winners.map((winner) => (
-            <div className="winner-row" key={winner.id}>
-              <span className="winner-rank">{winner.rank}</span>
-              <img
-                src={winner.image_url}
-                alt={winner.name}
-                className="winner-img"
-              />
-              <div className="winner-info">
-                <div className="winner-tags">
-                  <span className="winner-type-tag">{winner.contest_type}</span>
-                  <span
-                    className={`winner-medal-tag ${medalColors[winner.medal]}`}
-                  >
-                    🏅 {winner.medal}
-                  </span>
-                </div>
-                <h4 className="winner-name">{winner.name}</h4>
-                <p className="winner-meta">
-                  Age {winner.age} · "{winner.story_title}"
-                </p>
-              </div>
-            </div>
+      {error && (
+        <EmptyState icon="⚠️" title="Something went wrong" message={error} />
+      )}
+
+      {!loading && !error && contests.length === 0 && (
+        <EmptyState
+          icon="🏆"
+          title="No contests yet"
+          message="No contests available for this age group yet."
+        />
+      )}
+
+      {!loading && !error && contests.length > 0 && (
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          pagination
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={1000}
+          loop={contests.length > 4}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: Math.min(2, contests.length) },
+            1024: { slidesPerView: Math.min(4, contests.length) },
+          }}
+        >
+          {contests.map((contest) => (
+            <SwiperSlide key={contest.id}>
+              <ContestCard contest={contest} />
+            </SwiperSlide>
           ))}
-        </div>
-      </div>
+        </Swiper>
+      )}
     </section>
   );
 };

@@ -1,0 +1,183 @@
+.winner-section {
+  padding: 40px 90px 60px;
+  margin: 0 auto;
+}
+
+.winner-section-header {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.winner-section-header h2 {
+  font-size: 26px;
+  color: #14532d;
+  margin-bottom: 4px;
+}
+
+.winner-section-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.view-all-link {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #14532d;
+  text-decoration: none;
+}
+
+.winner-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.winner-filter-title {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.age-group-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.age-group-filter > span {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.age-group-pill {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.age-group-pill:hover {
+  border-color: #16a34a;
+}
+
+.age-group-pill.active {
+  background: #14532d;
+  color: #fff;
+  border-color: #14532d;
+}
+
+.winner-content-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.winner-swiper {
+  flex: 1 1 600px;
+}
+
+
+/*  */
+/* ===========================
+   Swiper Navigation Buttons
+=========================== */
+
+
+.winner-swiper .swiper-button-prev,
+.winner-swiper .swiper-button-next {
+  width: 25px;
+  height: 25px;
+  background: #ffffff;
+  border: 1px solid #2f605461;
+  border-radius: 50%;
+  color: #00830d;
+  box-shadow: 10px 8px 8px rgba(47, 96, 84, 0.15);
+  transition: all 0.3s ease;
+  padding: 4px;
+  /* border-radius: 2px 20px 20px 2px; */
+  /* margin-left: 45px; */
+}
+
+
+.winner-swiper .swiper-button-prev:hover,
+.winner-swiper .swiper-button-next:hover {
+  background: #2f6054;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.winner-swiper .swiper-button-prev::after,
+.winner-swiper .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.winner-swiper .swiper-button-prev {
+  left: 8px;
+}
+
+.winner-swiper .swiper-button-next {
+  right: 8px;
+}
+
+/* Disabled */
+.winner-swiper .swiper-button-disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .winner-section {
+  padding: 40px 20px 20px;
+}
+
+.age-group-filter > span {
+display: none;
+}
+.view-all-link {
+    position: absolute;
+    top: -35px;
+    right: 20px;
+}
+  .winner-swiper {
+    padding:10px;
+  }
+
+ 
+
+  .winner-swiper .swiper-button-prev::after,
+  .winner-swiper .swiper-button-next::after {
+    font-size: 13px;
+  }
+
+  .winner-swiper .swiper-button-prev {
+    left: 2px;
+  }
+
+  .winner-swiper .swiper-button-next {
+    right: 2px;
+  }
+}
+
+.winner-swiper .swiper-button-prev:hover,
+.winner-swiper .swiper-button-next:hover{
+    background:#d39b17;
+    border-color:#d39b17;
+    color:#fff;
+}

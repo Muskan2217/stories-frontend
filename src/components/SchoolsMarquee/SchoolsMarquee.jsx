@@ -4,16 +4,12 @@ import "./SchoolsMarquee.css";
 const images = import.meta.glob("../../assets/school-logos/*.{png,jpg,jpeg,webp}", { eager: true });
 
 const schools = [
+  { name: "Cornerstone School", logoPath: "CornerstoneSchool.jpg" },
   { name: "FanatiXxGold", logoPath: "FanatiXxGold.png" },
-  { name: "Oakridge International", logoPath: "oakridge.png" },
-  { name: "Heritage School", logoPath: "heritage.png" },
-  { name: "Pathways World", logoPath: "pathways.png" },
-  { name: "Vibgyor High", logoPath: "vibgyor.png" },
-  { name: "Kalpa Academy", logoPath: "kalpa.png" },
-  { name: "Podar International", logoPath: "podar.png" },
-  { name: "Ryan International", logoPath: "ryan.png" },
+  { name: "St Antony School", logoPath: "StAntonySchool.jpg" },
+  { name: "KLE School", logoPath: "KLESchool.jpg" },
+  { name: "Sanskaar School", logoPath: "Sanskaar-School.png" },
 ];
-
 const SchoolsMarquee = () => {
   // Helper to extract the proper built URL of the optimized image
   const getLogoUrl = (fileName) => {

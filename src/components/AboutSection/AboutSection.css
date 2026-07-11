@@ -84,24 +84,23 @@
   padding: 24px;
 }
 
-.about-card-icon {
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
+
+.about-card-icon{
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
 }
 
-.vision-icon {
-    background: linear-gradient(135deg, #ffd427 0%, #ce9505 100%);
+.about-card-icon img {
+    border-radius: 15px;
+    width: 45px;
+    height: 55px;
+    object-fit: contain;
 }
 
-.mission-icon {
-    background: linear-gradient(135deg, #37826f 0%, #025a2c 100%);
-}
 
 .about-card h4 {
   font-size: 16px;
@@ -223,18 +222,6 @@
 }
 
 
-/* 
-.about-img-wrap::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #e0c27a;
-  border-radius: 24px;
-  z-index: -1;
-} */
 
 
 @keyframes wobbleFloat {
