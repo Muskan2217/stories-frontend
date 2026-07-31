@@ -37,10 +37,12 @@
 
 .about-title {
   color:var(--color-primary-hover);
+  /* font-size: 40px !important; */
 }
 
 .about-title em {
   font-style: italic;
+  /* font-size: 40px !important; */
   color:#2c6658 !important;
 }
 
@@ -194,9 +196,9 @@
     padding: 40px 20px;
   }
 
-  .about-title {
-    font-size: 32px;
-  }
+  /* .about-title, .about-title em {
+    font-size: 32px !important;
+  } */
 
   .about-cards {
     flex-direction: column;

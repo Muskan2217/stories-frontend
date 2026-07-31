@@ -143,6 +143,10 @@
     gap:15px;
 }
 
+.quick-card{
+    margin-top: 85px;
+}
+
 .quick-card{  
     padding:20px;
 }
@@ -167,5 +171,18 @@ padding:50px 20px 10px;
         grid-template-columns: 1fr !important;
         gap:25px;
     }
+
+.quick-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.quick-card{
+    margin: 75px 25px 25px;
+}
+
+.quick-card:nth-child(2) {
+    margin: 75px 25px 25px;
+}
 
 }

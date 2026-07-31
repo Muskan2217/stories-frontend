@@ -18,9 +18,9 @@ const CONTEST_TABS = [
 ];
 
 const AGE_GROUPS = [
-  { label: "6-8 Years", slug: "6-8-years" },
-  { label: "9-12 Years", slug: "9-12-years" },
-  { label: "13-16 Years", slug: "13-16-years" },
+  { label: "7-10 Years", slug: "7-10-years" },
+  { label: "11-14 Years", slug: "11-14-years" },
+  { label: "15-18 Years", slug: "15-18-years" },
 ];
 
 const WinnerSection = () => {

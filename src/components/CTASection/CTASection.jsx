@@ -4,7 +4,7 @@ const CTASection = () => {
   return (
     <section className="cta">
       <div className="cta-inner">
-        <span className="cta-label">STORIES BY CHILDREN</span>
+        <span className="cta-label">✨ STORIES BY CHILDREN ✨ </span>
         <h2 className="cta-title">
           Every Child Has a Story <br /> Worth Publishing
         </h2>

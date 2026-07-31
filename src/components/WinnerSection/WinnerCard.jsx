@@ -6,10 +6,18 @@ const medalClass = {
   Bronze: "medal-bronze",
 };
 
+const positionIcon = {
+  1: "🥇",
+  2: "🥈",
+  3: "🥉",
+};
+
 const WinnerCard = ({ winner }) => {
   return (
     <div className="winner-card">
-      <span className="winner-rank">{winner.position}</span>
+      <span className={`winner-rank ${medalClass[winner.medal] || ""}`}>
+        {positionIcon[winner.position] || winner.position}
+      </span>
 
       <div className="winner-photo-wrap">
         <img
@@ -31,6 +39,14 @@ const WinnerCard = ({ winner }) => {
       <p className="winner-age">
         Age {winner.age}
       </p>
+
+      {(winner.class || winner.school_name || winner.place) && (
+        <p className="winner-details">
+          {[winner.class, winner.school_name, winner.place]
+            .filter(Boolean)
+            .join(" • ")}
+        </p>
+      )}
 
       <p className="winner-story-title">
         "{winner.story?.title}"

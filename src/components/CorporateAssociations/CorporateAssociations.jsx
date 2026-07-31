@@ -26,7 +26,7 @@ const CorporateAssociations = () => {
   return (
     <section className="marquee-section">
       <div className="marquee-header">
-        <span className="marquee-label">Corporate Associations</span>
+        <span className="marquee-label">CORPORATE ASSOCIATIONS</span>
         <h2 className="marquee-title">Partnering with Industry Leaders</h2>
       </div>
 

@@ -4,13 +4,13 @@ import QuickActions from "../../components/QuickActions/QuickActions";
 import Footer from "../../components/Footer/Footer";
 import CTASection from "../../components/CTASection/CTASection";
 import AboutSection from "../../components/AboutSection/AboutSection";
+import SchoolsMarquee from "../../components/SchoolsMarquee/SchoolsMarquee";
 import ProgramSection from "../../components/ProgramSection/ProgramSection";
 import CoursesSection from "../../components/CoursesSection/CoursesSection";
 import StorytellingSection from "../../components/StorytellingSection/StorytellingSection";
 import SchoolPartnerSection from "../../components/SchoolPartnerSection/SchoolPartnerSection";
 import PublishedBooksSection from "../../components/PublishedBooksSection/PublishedBooksSection";
 import FeaturedStory from "../../components/FeaturedStory/FeaturedStory";
-import SchoolsMarquee from "../../components/SchoolsMarquee/SchoolsMarquee";
 import CorporateAssociations from "../../components/CorporateAssociations/CorporateAssociations";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import SchoolPartnerBanner from "../../components/SchoolPartnerBanner/SchoolPartnerBanner";
@@ -29,8 +29,9 @@ const HomePage = () => {
       <QuickActions />
       <AboutSection />
       <ProgramSection />
+      <SchoolsMarquee />
       <CoursesSection />
-      <StorytellingSection />
+      <StorytellingSection /> 
       <SchoolPartnerSection />
       <PublishedBooksSection />
       <FeaturedStory />
@@ -40,7 +41,6 @@ const HomePage = () => {
       <CommunitySection />
       <AchieversSection />
       <GallerySection />
-      <SchoolsMarquee />
       <CorporateAssociations />
       <SchoolPartnerBanner />
       <Testimonials />

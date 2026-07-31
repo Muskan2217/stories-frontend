@@ -217,3 +217,11 @@
   background: linear-gradient(145deg, #e0a875, #a9591f);
   color: #3d1f00;
 }
+
+
+.winner-details {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 2px 0 6px;
+  line-height: 1.4;
+}

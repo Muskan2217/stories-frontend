@@ -1,9 +1,9 @@
 .contest-card {
   background: #fff;
   border-radius: 16px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-  height: 450px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   cursor: grab;
@@ -182,4 +182,42 @@
 }
 .swiper-slide:nth-child(5n+5) .join-contest-btn:hover {
   background: #380e6b !important;
+}
+
+
+/* 7/31/2026 */
+
+.contest-date-range {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+.contest-instructions {
+  margin: 8px 0;
+}
+
+.contest-instructions-btn {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.contest-instructions-btn:hover {
+  text-decoration: underline;
+}
+
+.contest-instructions-text {
+  font-size: 13px;
+  color: #374151;
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 6px;
+  line-height: 1.5;
 }

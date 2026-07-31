@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { API } from "../../config/api";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { FaBirthdayCake } from "react-icons/fa";
 import "./AchieversSection.css";
 
 const AchieversSection = () => {
@@ -65,14 +67,14 @@ const AchieversSection = () => {
   const dragStart = (e) => {
     isDragging.current = true;
     startX.current = getPositionX(e);
-    
+
     if (trackRef.current) {
       trackRef.current.style.transition = "none";
       const trackWidth = trackRef.current.offsetWidth;
       const singleCardWidth = trackWidth / totalItems;
       prevTranslate.current = -current * singleCardWidth;
     }
-    
+
     animationRef.current = requestAnimationFrame(animation);
   };
 
@@ -89,7 +91,8 @@ const AchieversSection = () => {
     cancelAnimationFrame(animationRef.current);
 
     if (trackRef.current) {
-      trackRef.current.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+      trackRef.current.style.transition =
+        "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
       const trackWidth = trackRef.current.offsetWidth;
       const singleCardWidth = trackWidth / totalItems;
       const movedBy = currentTranslate.current - prevTranslate.current;
@@ -115,12 +118,16 @@ const AchieversSection = () => {
         </div>
 
         <div className="achievers-arrows">
-          <button className="achievers-arrow" onClick={prev}>‹</button>
-          <button className="achievers-arrow" onClick={next}>›</button>
+          <button className="achievers-arrow" onClick={prev}>
+            ‹
+          </button>
+          <button className="achievers-arrow" onClick={next}>
+            ›
+          </button>
         </div>
       </div>
 
-      <div 
+      <div
         className="achievers-slider-wrap"
         onTouchStart={dragStart}
         onTouchMove={dragMove}
@@ -147,11 +154,30 @@ const AchieversSection = () => {
               }}
             >
               <div className="achiever-img-wrap">
-                <img src={a.image_url} alt={a.name} className="achiever-img" draggable="false" />
+                <img
+                  src={a.image_url}
+                  alt={a.name}
+                  className="achiever-img"
+                  draggable="false"
+                />
                 <div className="achiever-overlay">
                   <span className="achiever-label">{a.achievement_label}</span>
-                  <h3 className="achiever-name">{a.name}</h3>
-                  <p className="achiever-age">Age {a.age}</p>
+
+                  <div className="achiever-header">
+                    <h3 className="achiever-name">{a.name}</h3>
+
+                    <div className="achiever-age">
+   <FaBirthdayCake />
+   <span>{a.age} yrs</span>
+</div>
+
+                  </div>
+
+                 
+<div className="achiever-location">
+   <HiOutlineLocationMarker />
+   <span>{a.place}</span>
+</div>
                 </div>
               </div>
             </div>

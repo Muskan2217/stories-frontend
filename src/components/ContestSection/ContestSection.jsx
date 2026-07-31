@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -12,9 +11,10 @@ import EmptyState from "../EmptyState/EmptyState";
 import "./ContestSection.css";
 
 const AGE_GROUPS = [
-  { label: "6-8 Years", slug: "6-8-years", icon: "🧒" },
-  { label: "9-12 Years", slug: "9-12-years", icon: "👦" },
-  { label: "13-16 Years", slug: "13-16-years", icon: "🧑" },
+  { label: "All", slug: null, icon: "🌟" },
+  { label: "7-10 Years", slug: "7-10-years", icon: "🧒" },
+  { label: "11-14 Years", slug: "11-14-years", icon: "👦" },
+  { label: "15-18 Years", slug: "15-18-years", icon: "🧑" },
 ];
 
 const ContestSection = () => {
@@ -29,7 +29,10 @@ const ContestSection = () => {
         setLoading(true);
         setError(null);
         const res = await apiClient.get(API.contests, {
-          params: { age_group: ageGroup, status: "ongoing" },
+          params: {
+            ...(ageGroup ? { age_group: ageGroup } : {}),
+            status: "ongoing",
+          },
         });
         setContests(res.data.data || []);
       } catch (err) {
@@ -44,22 +47,17 @@ const ContestSection = () => {
 
   return (
     <section className="contest-section">
-        <div className="contest-intro">
+      <div className="contest-intro">
+        <div className="contest-badge">✨ CONTEST & RESULTS</div>
 
-  <div className="contest-badge">
-    ✨ CONTEST & RESULTS
-  </div>
+        <h2>Celebrating Young Voices</h2>
 
-  <h2>
-    Celebrating Young Voices
-  </h2>
-
-  <p className="contest-sub-heading">
-    Discover ongoing contests, meet our latest winners,
-    and find your child's next stage to shine.
-  </p>
-<div className="devider"></div>
-</div>
+        <p className="contest-sub-heading">
+          Discover ongoing contests, meet our latest winners, and find your
+          child's next stage to shine.
+        </p>
+        <div className="devider"></div>
+      </div>
       <div className="contest-section-header">
         <h2>🏆 Ongoing Contests</h2>
         <a href="/contests" className="view-all-link">

@@ -62,28 +62,39 @@ const PublishedBooksSection = () => {
 
             {/* LINKS */}
             <div className="book-card-links">
-              {book.amazon_url && (
-                <a
-                  href={book.amazon_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="book-link"
-                >
-                  Amazon
-                </a>
-              )}
+  {book.amazon_url && (
+    <a
+      href={book.amazon_url}
+      target="_blank"
+      rel="noreferrer"
+      className="book-link"
+    >
+      Amazon
+    </a>
+  )}
 
-              {book.flipkart_url && (
-                <a
-                  href={book.flipkart_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="book-link"
-                >
-                  Flipkart
-                </a>
-              )}
-            </div>
+  {book.flipkart_url && (
+    <a
+      href={book.flipkart_url}
+      target="_blank"
+      rel="noreferrer"
+      className="book-link"
+    >
+      Flipkart
+    </a>
+  )}
+
+  {book.sapna_url && (
+    <a
+      href={book.sapna_url}
+      target="_blank"
+      rel="noreferrer"
+      className="book-link"
+    >
+      Sapna
+    </a>
+  )}
+</div>
           </div>
         ))}
       </div>

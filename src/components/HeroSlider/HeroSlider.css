@@ -57,6 +57,12 @@
   margin-bottom: 36px;
   line-height: 1.6;
 }
+/* hilighting the text FREE insisde the subheading */
+.highlight{
+    color: #ff6b00;
+    font-weight: 700;
+}
+
 
 /* BUTTONS */
 .hero-btns {

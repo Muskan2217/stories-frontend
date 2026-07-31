@@ -7,7 +7,7 @@ const AgeGroupTabs = ({ ageGroups, activeAgeGroup, onChange }) => {
   
       {ageGroups.map((group) => (
         <button
-          key={group.slug}
+          key={group.slug ?? "all"}
           className={`age-group-pill ${
             activeAgeGroup === group.slug ? "active" : ""
           }`}
