@@ -1,6 +1,6 @@
 .marquee-section {
-  padding: 100px 50px;
-  background-color: #fdfaf0;
+  padding: 50px 50px 60px;
+  background-color: #fefff0;
   overflow: hidden;
   border-width: 1px 0 0 1px; 
   border-style: solid; 
@@ -19,15 +19,19 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;
-  color: #1a3d2b;
+  color: var(--color-secondary);
   margin-bottom: 12px;
+  background-color: #fff;
+  padding:10px 20px;
+  border-radius: 100px;
+  border:1px solid rgb(222, 220, 220);
 }
 
 .marquee-title {
   font-size: 32px;
   font-weight: 800;
-  color: #1a3d2b;
-  margin: 0;
+  color: var(colot-primary-hover);
+  margin-top: 15px;
   line-height: 1.2;
 }
 
@@ -50,21 +54,13 @@
 }
 
 .marquee-fade-left {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #fdfaf0 0%,
-    transparent 100%
-  );
+    left: 0;
+    background: linear-gradient(to right, #e7f6ee66 0%, transparent 100%);
 }
 
 .marquee-fade-right {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #fdfaf0 0%,
-    transparent 100%
-  );
+    right: 0;
+    background: linear-gradient(to left, #e7f6ee66 0%, #00000000 100%);
 }
 
 /* SCROLLING TRACK */
@@ -73,6 +69,7 @@
   align-items: center;
   gap: 0;
   width: max-content;
+  margin: 15px 1px;
   animation: marquee-scroll 30s linear infinite;
 }
 
@@ -95,40 +92,88 @@
 }
 
 /* EACH ITEM */
-.marquee-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 230px;
-  height: 120px;
-  margin: 0 18px;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 18px;
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  transition: all .3s ease;
+.marquee-item
+ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+    height: 160px;
+    padding: 40px 20px;
+    background: #ffffff;
+    border: 1.09px dashed #198402c4;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(197, 196, 196, 0.688);
+    transition: all .3s ease;
+    margin:15px 10px;
 }
 
 .marquee-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.10);
-  border-color: rgba(211,155,23,.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(1, 80, 8, 0.452);
+  border-color:var(--color-secondary);
+  height: 140px;
+  background-color:var(--color-primary-hover);
 }
 
 /* LOGO */
 .marquee-logo {
   width: 180px;
-  height: 80px;
-  border: 1px solid #dfdfdf;
+  height: 100px;
+  border: .5px solid var(--color-secondary);
   border-radius: 7px;
-
+  background-color: #ffffff;
   object-fit: contain;
   object-position: center;
 
   transition: transform .3s ease;
 }
+
+
+.marquee-school-info {
+  text-align: center;
+  margin-top: 8px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: rgba(239, 240, 237, 0.962);
+      border: 1px solid #0aac3a52;
+}
+
+.marquee-school-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary-hover);
+  margin: 0;
+  
+}
+
+.marquee-school-place {
+  font-size: 11px;
+  color:rgb(255, 10, 10);
+  margin: 2px 0 0;
+}
+
+
+.marquee-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.marquee-links a {
+  font-size: 11.7px;
+  color: #5b53f1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.marquee-links a:hover {
+  text-decoration: underline;
+}
+
+
 
 .marquee-item:hover .marquee-logo {
   transform: scale(1.06);

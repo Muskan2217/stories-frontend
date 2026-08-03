@@ -9,11 +9,13 @@ const images = import.meta.glob(
   { eager: true }
 );
 
+// NOTE: website / linkedin are placeholders (null) — replace with
+// actual URLs once the client shares them. Links only render when present.
 const corporates = [
-  { name: "Christ University", logoPath: "ChristUniversity.jpeg" },
-  { name: "FanatiXxGold", logoPath: "FanatiXxGold.png" },
-  { name: "Sapna Book House", logoPath: "SapnaBook House.png" },
-  { name: "Sapna B-House", logoPath: "SapnaB-House.jpg" },
+  { name: "Christ University", place: "Bengaluru", website: null, linkedin: null, logoPath: "ChristUniversity.jpeg" },
+  { name: "FanatiXxGold", place: "Delhi", website: null, linkedin: null, logoPath: "FanatiXxGold.png" },
+  { name: "Sapna Book House", place: "Bengaluru", website: null, linkedin: null, logoPath: "SapnaBook House.png" },
+  { name: "Sapna B-House", place: "Bengaluru", website: null, linkedin: null, logoPath: "SapnaB-House.jpg" },
 ];
 
 const CorporateAssociations = () => {
@@ -42,6 +44,25 @@ const CorporateAssociations = () => {
                 alt={company.name}
                 className="marquee-logo"
               />
+              <div className="marquee-school-info">
+                <p className="marquee-school-name">{company.name}</p>
+                <p className="marquee-school-place">📌 {company.place}</p>
+
+                {(company.website || company.linkedin) && (
+                  <div className="marquee-links">
+                    {company.website && (
+                      <a href={company.website} target="_blank" rel="noreferrer">
+                        🌐 Website
+                      </a>
+                    )}
+                    {company.linkedin && (
+                      <a href={company.linkedin} target="_blank" rel="noreferrer">
+                        LinkedIn
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

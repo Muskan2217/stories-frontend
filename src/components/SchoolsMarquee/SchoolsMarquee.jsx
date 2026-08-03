@@ -1,15 +1,51 @@
 import "./SchoolsMarquee.css";
 
 // Dynamic import for all image assets from the school-logos folder
-const images = import.meta.glob("../../assets/school-logos/*.{png,jpg,jpeg,webp}", { eager: true });
+const images = import.meta.glob(
+  "../../assets/school-logos/*.{png,jpg,jpeg,webp}",
+  { eager: true },
+);
 
+// NOTE: website / linkedin are placeholders (null) — replace with
+// actual URLs once the client shares them. Links only render when present.
 const schools = [
-  { name: "Cornerstone School", logoPath: "CornerstoneSchool.jpg" },
-  { name: "FanatiXxGold", logoPath: "FanatiXxGold.png" },
-  { name: "St Antony School", logoPath: "StAntonySchool.jpg" },
-  { name: "KLE School", logoPath: "KLESchool.jpg" },
-  { name: "Sanskaar School", logoPath: "Sanskaar-School.png" },
+  {
+    name: "Cornerstone School",
+    place: "Faridabad",
+    website: "https://example.com",
+    linkedin: "https://linkedin.com",
+    logoPath: "CornerstoneSchool.jpg",
+  },
+  {
+    name: "FanatiXxGold",
+    place: "Delhi",
+    website: "https://example.com",
+    linkedin: "https://linkedin.com",
+    logoPath: "FanatiXxGold.png",
+  },
+  {
+    name: "St Antony School",
+    place: "Mumbai",
+    website: "https://example.com",
+    linkedin: "https://linkedin.com",
+    logoPath: "StAntonySchool.jpg",
+  },
+  {
+    name: "KLE School",
+    place: "Bengaluru",
+    website: "https://example.com",
+    linkedin: "https://linkedin.com",
+    logoPath: "KLESchool.jpg",
+  },
+  {
+    name: "Sanskaar School",
+    place: "Pune",
+    website: "https://example.com",
+    linkedin: "https://linkedin.com",
+    logoPath: "Sanskaar-School.png",
+  },
 ];
+
 const SchoolsMarquee = () => {
   // Helper to extract the proper built URL of the optimized image
   const getLogoUrl = (fileName) => {
@@ -39,6 +75,29 @@ const SchoolsMarquee = () => {
                 alt={school.name}
                 className="marquee-logo"
               />
+              <div className="marquee-school-info">
+                <p className="marquee-school-name">{school.name}</p>
+                <p className="marquee-school-place">📌 {school.place}</p>
+
+                {(school.website || school.linkedin) && (
+                  <div className="marquee-links">
+                    {school.website && (
+                      <a href={school.website} target="_blank" rel="noreferrer">
+                         Website
+                      </a>
+                    )}
+                    {school.linkedin && (
+                      <a
+                        href={school.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                         LinkedIn 
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
