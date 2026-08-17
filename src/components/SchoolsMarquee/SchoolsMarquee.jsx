@@ -83,7 +83,7 @@ const SchoolsMarquee = () => {
                   <div className="marquee-links">
                     {school.website && (
                       <a href={school.website} target="_blank" rel="noreferrer">
-                         Website
+                        🌐
                       </a>
                     )}
                     {school.linkedin && (
