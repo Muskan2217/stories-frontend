@@ -30,7 +30,7 @@
 .marquee-title {
   font-size: 32px;
   font-weight: 800;
-  color: var(colot-primary-hover);
+  color: var(--color-primary-hover);
   margin-top: 15px;
   line-height: 1.2;
 }
